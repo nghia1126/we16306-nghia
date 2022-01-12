@@ -1,7 +1,9 @@
-const SingIn= {
+import Menu from "../components/menu";
+
+const SignIn= {
     print(){
-        return `
-    
+        return /*html*/  `
+    ${Menu.print()}
     <div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-md w-full space-y-8">
       <div>
@@ -61,4 +63,4 @@ const SingIn= {
     `;
     },
 };
-export default SingIn;
+export default SignIn;

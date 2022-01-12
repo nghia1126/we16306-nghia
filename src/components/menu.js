@@ -1,0 +1,26 @@
+const Menu = {
+    print() {
+        return `
+         <div class="header">
+      <div class="bg-[#272f54]">
+        <a href=""><img class="mx-auto py-4" src="https://picsum.photos/100/100" alt=""></a>
+      </div>
+      <div class="bg-[#b27b34]">
+        <ul class="flex">
+          <li><a href="http://localhost:3000//assignment/src/admin/signIn.js" class="block py-2 px-3 text-white  hover:underline underline-offset-4 ">Trang chủ</a></li>
+          <li><a href="" class="block py-2 px-3 text-white hover:underline underline-offset-4">Tuyển sinh</a></li>
+          <li><a href="" class="block py-2 px-3 text-white hover:underline underline-offset-4">Chương trình đào tạo</a></li>
+          <li><a href="" class="block py-2 px-3 text-white hover:underline underline-offset-4">Góc sinh viên</a></li>
+          <li><a href="" class="block py-2 px-3 text-white hover:underline underline-offset-4">Tuyển dụng</a></li>
+          <form action="" class="block py-3 px-4 text-white ">
+            <input type="text">
+            <button class="border-5 bg-cyan-900  px-[5px] text-white hover:bg-cyan-600">TÌM KIẾM</button>
+          </form>
+        </ul>
+
+      </div>
+    </div>
+        `;
+    },
+};
+export default Menu;

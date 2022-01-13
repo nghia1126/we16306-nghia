@@ -1,6 +1,7 @@
 import Navigo from "navigo";
 import AddNew from "./admin/addNews";
 import Dashboard from "./admin/dashboard";
+import EditNew from "./admin/editNews";
 import News from "./admin/news";
 import SignIn from "./admin/signIn";
 import SignUp from "./admin/signUp";
@@ -43,7 +44,7 @@ router.on({
     },
     "/admin/news/:id/edit":({data})=>{
         const {id}= data;
-        render(DetailNewsPage.render(id));
+        render(EditNew.render(id));
     }
 });
 router.resolve();

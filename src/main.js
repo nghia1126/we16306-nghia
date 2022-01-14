@@ -42,9 +42,10 @@ router.on({
     "/admin/addNews": ()=> {
         render(AddNew.print());
     },
-    "/admin/news/:id/edit":({data})=>{
+    "/admin/news/edit/:id":({data})=>{
         const {id}= data;
         render(EditNew.render(id));
+        
     }
 });
 router.resolve();

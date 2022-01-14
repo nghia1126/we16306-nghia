@@ -32,13 +32,12 @@ const News = {
               </th>
             </tr>
           </thead>
+          
           <tbody class="bg-white divide-y divide-gray-200">
+          
             <tr>
               <td class="px-3 py-4 whitespace-nowrap">
-                <div class="">
-                 
-                  
-                </div>
+                <div class="">${post.id}</div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-m text-gray-900">${post.title}</div>
@@ -54,8 +53,7 @@ const News = {
                 <a href="/admin/news/edit/${post.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
               </td>
             </tr>
-
-          
+            </body>
         </table>
       </div>
     </div>
@@ -66,9 +64,6 @@ const News = {
 
     )}
             
-        
-
-
         `;
     },
 };

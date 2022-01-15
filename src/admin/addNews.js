@@ -1,10 +1,11 @@
 import Menu from "../components/menu";
+import MenuAdmin from "../components/menuAdmin";
 
 const AddNew = {
     print() {
         return /*html*/ `
         ${Menu.print()}
-        
+        ${MenuAdmin.print()}
 <div>
 <div class="md:grid md:grid-cols-3 md:gap-6">
   <div class="md:col-span-1">

@@ -11,7 +11,8 @@ import DetailNewsPage from "./pages/detailNews";
 import HomePage from "./pages/home";
 
 
-const router = new Navigo("/");
+const router = new Navigo("/", { linksSelector: "a" });
+
 const render = (content) => {
     //document.getElementById("header").innerHTML = Menu.print();
     document.getElementById("main").innerHTML = content;

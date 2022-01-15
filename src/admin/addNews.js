@@ -7,15 +7,8 @@ const AddNew = {
         ${Menu.print()}
         ${MenuAdmin.print()}
 <div>
-<div class="md:grid md:grid-cols-3 md:gap-6">
-  <div class="md:col-span-1">
-    <div class="px-4 sm:px-0">
-      <h3 class="text-lg font-medium leading-6 text-gray-900">Profile</h3>
-      <p class="mt-1 text-sm text-gray-600">
-        This information will be displayed publicly so be careful what you share.
-      </p>
-    </div>
-  </div>
+<div class="place-content-center">
+<h2 class="text-center text-3xl">Add New</h2>
   <div class="mt-5 md:mt-0 md:col-span-2">
     <form action="#" method="POST">
       <div class="shadow sm:rounded-md sm:overflow-hidden">

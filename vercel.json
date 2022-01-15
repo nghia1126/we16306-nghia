@@ -1,0 +1,60 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/news",
+            "dest": "/"
+        },
+        {
+            "src": "/news/(.*)",
+            "dest": "/"
+        },
+        {
+            "src": "/admissions",
+            "dest": "/"
+        },
+        {
+            "src": "/training-program",
+            "dest": "/"
+        },
+        {
+            "src": "/student-corner",
+            "dest": "/"
+        },
+        {
+            "src": "/recruitment",
+            "dest": "/"
+        },
+        {
+            "src": "/signin",
+            "dest": "/"
+        },
+        {
+            "src": "/signup",
+            "dest": "/"
+        },
+        {
+            "src": "/admin/dashboard",
+            "dest": "/"
+        },
+        {
+            "src": "/admin/news",
+            "dest": "/"
+        },
+        {
+            "src": "/admin/news/add",
+            "dest": "/"
+        },
+        {
+            "src": "/admin/news/(.*)/edit",
+            "dest": "/"
+        },
+        {
+            "src": "/search",
+            "dest": "/"
+        }
+    ]
+}

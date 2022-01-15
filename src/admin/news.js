@@ -6,7 +6,7 @@ const News = {
     print() {
         return/*html*/ `
         ${Menu.print()}
-        ${data.map((post) => `
+        
 
         <div class="flex flex-col">
   <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -34,7 +34,7 @@ const News = {
           </thead>
           
           <tbody class="bg-white divide-y divide-gray-200">
-          
+          ${data.map((post) => `
             <tr>
               <td class="px-3 py-4 whitespace-nowrap">
                 <div class="">${post.id}</div>
@@ -52,17 +52,22 @@ const News = {
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <a href="/admin/news/edit/${post.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
               </td>
-            </tr>
-            </body>
+            </tr>`
+    )
+        .join("")
+}
+    
+            </tbody>
+               
+
+    
         </table>
       </div>
     </div>
   </div>
 </div>
         
-        `
-
-    )}
+     
             
         `;
     },

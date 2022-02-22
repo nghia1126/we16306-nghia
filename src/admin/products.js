@@ -3,10 +3,10 @@ import Menu from "../components/menu";
 import MenuAdmin from "../components/menuAdmin";
 
 
-import TablePost from "../admin/delete";
-const News = {
+import TablePost from "../admin/deleteProduct";
+const Products = {
     async print() {
-        const response = await fetch("http://localhost:3001/posts");
+        const response = await fetch("http://localhost:3001/products");
 
         const data= await response.json();
         return/*html*/ `
@@ -31,13 +31,13 @@ const News = {
                 Image
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Author
+                Price
               </th>
               <th scope="col" class="px-6 text-center py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Content
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                About
+                Ingredient
               </th>
               <th scope="col" class="relative px-6 py-3">
                 <span class="sr-only">Edit</span>
@@ -55,23 +55,23 @@ const News = {
                 <div class="">${post.id}</div>
               </td>
               <td class="px-3 py-2 ">
-                <div class="text-m text-gray-900">${post.title}</div>
+                <div class="text-m text-gray-900">${post.name}</div>
                 
               </td>
               <td class="px-3 py-2 ">
               <img src="${post.img}" alt="" />
               </td>
               <td class="px-3 py-2 ">
-              <p>${post.author}</p>
+              <p>${post.price}</p>
               </td>
               <td class="px-3 py-2   text-sm text-gray-500">
               <p>${post.desc}</p>
               </td>
               <td class="px-3 py-2 text-sm text-gray-500">
-              <p>${post.about}</p>
+              <p>${post.ingredient}</p>
               </td>
               <td class="px-3 py-2 whitespace-nowrap text-right text-sm font-medium">
-                <a href="/admin/news/editNews/${post.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                <a href="/admin/products/editProduct/${post.id}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
               </td>
               <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                 <button data-id="${post.id}" class="btn bg-red-500 p-3 rounded text-white inline-block">Delete</button>
@@ -96,4 +96,4 @@ const News = {
         TablePost.afterRender();
     }
 };
-export default News;
+export default Products;

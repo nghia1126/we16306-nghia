@@ -1,4 +1,8 @@
+import { signin } from "../api/user";
 import Menu from "../components/menu";
+import toastr from "toastr";
+import "toastr/build/toastr.min.css";
+
 
 const SignIn= {
     print(){
@@ -9,7 +13,7 @@ const SignIn= {
       <div>
         <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
           <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Đăng nhập tài khoản của bạn
           </h2>
           <p class="mt-2 text-center text-sm text-gray-600">
             Or
@@ -18,12 +22,12 @@ const SignIn= {
             </a>
           </p>
       </div>
-      <form class="mt-8 space-y-6" action="#" method="POST">
+      <form class="mt-8 space-y-6" action="#" method="POST" id="formSignin">
         <input type="hidden" name="remember" value="true">
           <div class="rounded-md shadow-sm -space-y-px">
             <div>
               <label for="email-address" class="sr-only">Email address</label>
-              <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+              <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
             </div>
             <div>
               <label for="password" class="sr-only">Password</label>
@@ -40,8 +44,9 @@ const SignIn= {
             </div>
 
             <div class="text-sm">
-              <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">
-                Forgot your password?
+            <span>You don't have an account?</span>
+              <a href="/signUp" class="font-medium text-indigo-600 hover:text-indigo-500">
+              Register
               </a>
             </div>
           </div>
@@ -62,5 +67,37 @@ const SignIn= {
   </div>
     `;
     },
+    afterRender(){
+        const formSignin = document.querySelector("#formSignin");
+        formSignin.addEventListener("submit", async function(e){
+            e.preventDefault();
+            try {
+                const { data } = await signin({
+                    email: document.querySelector("#email").value,
+                    password: document.querySelector("#password").value
+                });    
+                if(data){
+                    localStorage.setItem("user", JSON.stringify(data.user));
+                    
+                    setTimeout(()=>{
+                        if(data.user.id == 1){
+                            toastr.success("Bạn đã đăng nhập với tư cách quản trị viên!");
+                            
+                            document.location.href="/admin/dashboard";
+                        } else {
+                            toastr.success("Bạn đã đăng nhập thành công");
+                            document.location.href="/";
+                        }
+                    }, 2000);
+                }
+            
+            } catch (error) {
+                toastr.error(error.response.data);
+            }
+        
+
+        
+        });
+    }
 };
 export default SignIn;

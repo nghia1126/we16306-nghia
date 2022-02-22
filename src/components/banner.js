@@ -1,7 +1,8 @@
 const Banner = {
     print() {
         return `
-            <img src="https://picsum.photos/980/200" alt="" />
+            <img class="max-w-full "  src="https://tiendatcoffee.com/wp-content/uploads/2020/10/0.jpg" alt="" />
+            
         `;
     },
 };

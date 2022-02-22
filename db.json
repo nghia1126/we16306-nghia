@@ -1,0 +1,115 @@
+{
+  "posts": [
+    {
+      "createdAt": "2022-01-14T17:58:26.446Z",
+      "title": "Văn hóa uống cà phê của người Sài Gòn lên báo Anh",
+      "img": "https://res.cloudinary.com/dy6hidp44/image/upload/v1645426251/post1_xyv9xb.jpg",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+      "id": "11",
+      "ingredient": "hạt cà phê nguyên chất",
+      "about": "Bài viết trên tờ Telegraph (Anh) nhận định văn hóa thưởng thức cà phê ở TPHCM không giống như ở bất cứ nơi nào khác trên thế giới. Ở đây, cà phê là thức uống đem lại năng lượng cho người dân của cả một thành phố sôi động.",
+      "author": "Phạm Văn A"
+    },
+    {
+      "createdAt": "2022-01-15T02:21:11.908Z",
+      "title": "Không chỉ giảm ung thư, cà phê có nhiều lợi cho sức khỏe hơn bạn tưởng",
+      "img": "https://bizweb.dktcdn.net/100/159/843/articles/giao-dien-coffee.jpg?v=1481122251643",
+      "desc": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+      "id": "13",
+      "about": "Bài viết trên tờ Telegraph (Anh) nhận định văn hóa thưởng thức cà phê ở TPHCM không giống như ở bất cứ nơi nào khác trên thế giới. Ở đây, cà phê là thức uống đem lại năng lượng cho người dân của cả một thành phố sôi động.",
+      "ingredient": "hạt cà phê nguyên chất",
+      "author": "Phạm Văn A"
+    },
+    {
+      "createdAt": "2022-01-10T20:33:27.477Z",
+      "title": "Cách phân biệt cà phê thật và cafe giả",
+      "img": "https://bizweb.dktcdn.net/100/159/843/articles/theme-coffee.jpg?v=1481122077477",
+      "desc": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+      "id": "2",
+      "about": "Bài viết trên tờ Telegraph (Anh) nhận định văn hóa thưởng thức cà phê ở TPHCM không giống như ở bất cứ nơi nào khác trên thế giới. Ở đây, cà phê là thức uống đem lại năng lượng cho người dân của cả một thành phố sôi động.",
+      "ingredient": "hạt cà phê nguyên chất",
+      "author": "Phạm Văn A"
+    }
+  ],
+  "users": [
+    {
+      "email": "nghia11@gmail.com",
+      "password": "$2a$10$8H3XelH/Rp3Mc2MBy4W0QOk2HtsoUmPHmYq5vWIwpPSURgj79yn6G",
+      "name": "f",
+      "id": 1
+    },
+    {
+      "email": "hth@gmail.com",
+      "password": "$2a$10$gUNx2cNzyR/toGfMwf14F.zZSNUr20LGpMhIpGiPcnvuoNRfdcKZq",
+      "name": "nghia",
+      "id": 2
+    },
+    {
+      "email": "thuong@gmail.com",
+      "password": "$2a$10$sV3ujwYrldUw7tR9VG.4OuTkZLm.LDtrm3yUKx0gl9y8g2xFqdtui",
+      "name": "nghia",
+      "id": 3
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "$2a$10$Qw0xjzoM2y/lr3kkBZoZuOz18OxOyJ/LvJDSiQNEaBcHzHLvLFf7y",
+      "name": "abc",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": "2",
+      "name": "Cà phê BELLA",
+      "img": "http://res.cloudinary.com/dy6hidp44/image/upload/v1644994262/zu81zac28afjecn9h6ja.jpg",
+      "price": "100.000$",
+      "quantily": "5",
+      "ingredient": "hạt cà phê nguyên chất",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+    },
+    {
+      "id": "3",
+      "name": "Cà phê BELLA",
+      "img": "http://res.cloudinary.com/dy6hidp44/image/upload/v1644994262/zu81zac28afjecn9h6ja.jpg",
+      "price": "100.000$",
+      "quantily": "9",
+      "ingredient": "hạt cà phê nguyên chất",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+    },
+    {
+      "id": "4",
+      "name": "Cà phê BELLA",
+      "img": "http://res.cloudinary.com/dy6hidp44/image/upload/v1644994262/zu81zac28afjecn9h6ja.jpg",
+      "price": "100.000$",
+      "quantily": "9",
+      "ingredient": "hạt cà phê nguyên chất",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+    },
+    {
+      "id": "5",
+      "name": "Cà phê Chồn",
+      "img": "http://res.cloudinary.com/dy6hidp44/image/upload/v1644994262/zu81zac28afjecn9h6ja.jpg",
+      "price": "100.000$",
+      "quantily": "9",
+      "ingredient": "hạt cà phê nguyên chất",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+    },
+    {
+      "id": "6",
+      "name": "Cà phê đặc biệt",
+      "img": "http://res.cloudinary.com/dy6hidp44/image/upload/v1644994262/zu81zac28afjecn9h6ja.jpg",
+      "price": "100.000$",
+      "quantily": "9",
+      "ingredient": "hạt cà phê nguyên chất",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+    },
+    {
+      "name": "Bennie Moo",
+      "price": "12345",
+      "ingredient": "bbbbbbb",
+      "desc": "aaaaa",
+      "img": "http://res.cloudinary.com/dy6hidp44/image/upload/v1645369640/tpqtuqhzdvjvqhmmonxb.jpg",
+      "id": "IpPW9Jl"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ const CartPage = {
                <thead >
                 <tr class="bg-slate-400 px-[10px] py-[35px] " >
                     <th>Tên sản phẩm</th>
-                    <th>Ảnh</th>
+                    
                     <th>Giá</th>
                     <th>Số lượng</th>
                     <th></th>
@@ -33,10 +33,7 @@ const CartPage = {
                         
                         <td class="px-4">${item.price}
                             
-                        </td>
-                        <td class="px-4">${item.img}
-                            
-                        </td>
+                        
                         <td>
                             <button  data-id="${item.id}" class="btn increase border border-black p-2">+</button>
                             <span>${item.quantily}</span>

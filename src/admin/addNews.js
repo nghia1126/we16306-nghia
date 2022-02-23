@@ -2,7 +2,8 @@ import axios from "axios";
 import Menu from "../components/menu";
 import { reRender } from "../utils/rerender";
 import MenuAdmin from "../components/menuAdmin";
-
+import $ from "jQuery";
+import validate from "jquery-validation";
 const AddNew = {
   
     async print() {
@@ -23,7 +24,7 @@ const AddNew = {
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
                
-                <input type="text" name="company-website" id="company-website" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Title...">
+                <input type="text" name="title" id="company-website" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Title...">
               </div>
             </div>
           </div>
@@ -93,35 +94,71 @@ const AddNew = {
         `;
     },
     afterRender(){
-        const formAdd= document.querySelector("#form_add");
+        const formAdd= $("#form_add");
         const imgPost = document.querySelector("#file-upload");
 
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/dy6hidp44/image/upload";
         const CLOUDINARY_PRESET = "dtx90hmv";
         
-        formAdd.addEventListener("submit", async(e)=>{
-            e.preventDefault();
-
-            const file = imgPost.files[0];
-            const formData = new FormData();
-            formData.append("file", file);
-            formData.append("upload_preset", CLOUDINARY_PRESET);
-            const response = await axios.post(CLOUDINARY_API,formData, {
-                headers: {
-                    "Content-Type": "application/form-data"
+        formAdd.validate({
+            rules:{
+                "title":{
+                    required:true,
+                    minlength:5,
+                    maxlength:30
+                },
+                "author":{
+                    required:true
+                },
+                "about":{
+                    required:true
+                },
+                "content":{
+                    required:true
                 }
-            });
-            const add={
-                title:document.querySelector("#company-website").value,
-                author:document.querySelector("#author").value,
-                desc:document.querySelector("#content").value,
-                about:document.querySelector("#about").value,
-                img:response.data.url
-            };
-            axios.post("http://localhost:3001/posts", add);
-            document.location.href="/#/admin/news";
-            await reRender(AddNew, "#app");
+            },
+            messages:{
+                "title":{
+                    required: "Bạn cần nhập tiêu đề",
+                    minlength: "Ngắn quá, nhiều chữ lên",
+                    maxlength: "Dài quá, ít thôi"
+                },
+                "author":{
+                    required:"Nhập tên tác giả đi"
+                },
+                "about":{
+                    required:"Nhập phần này đi"
+                },
+                "content":{
+                    required:"Nhập phần này đi"
+                }
+            },
+            submitHandler:()=>{
+                async function addNewHandler(){
+                    const file = imgPost.files[0];
+                    const formData = new FormData();
+                    formData.append("file", file);
+                    formData.append("upload_preset", CLOUDINARY_PRESET);
+                    const response = await axios.post(CLOUDINARY_API,formData, {
+                        headers: {
+                            "Content-Type": "application/form-data"
+                        }
+                    });
+                    const add={
+                        title:document.querySelector("#company-website").value,
+                        author:document.querySelector("#author").value,
+                        desc:document.querySelector("#content").value,
+                        about:document.querySelector("#about").value,
+                        img:response.data.url
+                    };
+                    axios.post("http://localhost:3001/posts", add);
+                    document.location.href="/#/admin/news";
+                    await reRender(AddNew, "#app");
+                }
+                addNewHandler();
+            }
         });
+       
     }
 };
 export default AddNew;

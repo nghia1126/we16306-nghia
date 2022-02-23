@@ -57,7 +57,26 @@
       "id": 4
     }
   ],
+  "postCates": [
+    {
+      "id": 1,
+      "name": "danh mục bài viết 1"
+    },
+    {
+      "id": 2,
+      "name": "danh mục bài viết 2"
+    }
+  ],
   "products": [
+    {
+      "id": "1",
+      "name": "Cà phê BELLA",
+      "img": "http://res.cloudinary.com/dy6hidp44/image/upload/v1644994262/zu81zac28afjecn9h6ja.jpg",
+      "price": "100.000$",
+      "quantily": "5",
+      "ingredient": "hạt cà phê nguyên chất",
+      "desc": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals"
+    },
     {
       "id": "2",
       "name": "Cà phê BELLA",

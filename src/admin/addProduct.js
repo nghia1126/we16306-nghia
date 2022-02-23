@@ -2,9 +2,10 @@ import axios from "axios";
 import Menu from "../components/menu";
 import { reRender } from "../utils/rerender";
 import MenuAdmin from "../components/menuAdmin";
-
+import $ from "jQuery";
+// import validate from "jquery-validate";
 const AddProduct = {
-  
+
     async print() {
         return /*html*/ `
         ${Menu.print()}
@@ -23,7 +24,7 @@ const AddProduct = {
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
                
-                <input type="text" name="company-website" id="company-website" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Title...">
+                <input type="text" name="name" id="company-website" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Title...">
               </div>
             </div>
           </div>
@@ -92,36 +93,80 @@ const AddProduct = {
 </div>
         `;
     },
-    afterRender(){
-        const formAdd= document.querySelector("#form_add");
+    afterRender() {
+        const formAdd = $("#form_add");
         const imgPost = document.querySelector("#file-upload");
 
         const CLOUDINARY_API = "https://api.cloudinary.com/v1_1/dy6hidp44/image/upload";
         const CLOUDINARY_PRESET = "dtx90hmv";
-        
-        formAdd.addEventListener("submit", async(e)=>{
-            e.preventDefault();
 
-            const file = imgPost.files[0];
-            const formData = new FormData();
-            formData.append("file", file);
-            formData.append("upload_preset", CLOUDINARY_PRESET);
-            const response = await axios.post(CLOUDINARY_API,formData, {
-                headers: {
-                    "Content-Type": "application/form-data"
+        formAdd.validate({
+            rules: {
+                "name": {
+                    required: true
+                },
+                "price": {
+                    required: true
+                },
+                "about": {
+                    required: true
+                },
+                "ingredient": {
+                    required: true
                 }
-            });
-            const add={
-                name:document.querySelector("#company-website").value,
-                price:document.querySelector("#price").value,
-                ingredient:document.querySelector("#ingredient").value,
-                desc:document.querySelector("#about").value,
-                img:response.data.url
-            };
-            axios.post("http://localhost:3001/products", add);
-            document.location.href="/#/admin/addProduct";
-            await reRender(AddProduct, "#app");
+            },
+            messages: {
+                "name": {
+                    required: "Bạn cần nhập tên sp"
+                },
+                "price": {
+                    required: "Bạn cần nhập giá sp"
+                },
+                "about": {
+                    required: "Bạn cần nhập mô tả sp"
+                },
+                "ingredient": {
+                    required: "Bạn cần nhập thành phần sp"
+                }
+            },
+            submitHandler: () => {
+                async function addProductHandler() {
+                    const file = imgPost.files[0];
+                    const formData = new FormData();
+                    formData.append("file", file);
+                    formData.append("upload_preset", CLOUDINARY_PRESET);
+                    const response = await axios.post(CLOUDINARY_API, formData, {
+                        headers: {
+                            "Content-Type": "application/form-data"
+                        }
+                    });
+                    const add={
+                        name:document.querySelector("#company-website").value,
+                        price:document.querySelector("#price").value,
+                        ingredient:document.querySelector("#ingredient").value,
+                        desc:document.querySelector("#about").value,
+                        img: response.data.url
+                    };
+                    axios.post("http://localhost:3001/products", add);
+                    document.location.href = "/#/admin/products";
+                    await reRender(AddProduct, "#app");
+                }
+                addProductHandler();
+            }
         });
+
+
+        //   const add = {
+        //     name: document.querySelector("#company-website").value,
+        //     price: document.querySelector("#price").value,
+        //     ingredient: document.querySelector("#ingredient").value,
+        //     desc: document.querySelector("#about").value,
+        //     img: response.data.url
+        //   };
+        //   axios.post("http://localhost:3001/products", add);
+        //   document.location.href = "/#/admin/addProduct";
+        //   await reRender(AddProduct, "#app");
+        // });
     }
 };
 export default AddProduct;

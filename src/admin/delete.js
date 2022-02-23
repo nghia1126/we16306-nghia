@@ -15,7 +15,7 @@ const TablePost = {
                     <button data-id="${post.id}" class="btn bg-red-500 p-3 rounded text-white inline-block">Delete</button>
                 </td>
             </tr>
-        `).join("")}
+        `).join("")} 
         `;
     },
     afterRender(){

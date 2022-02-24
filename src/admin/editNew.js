@@ -5,7 +5,7 @@ import { update } from "../api/posts";
 import MenuAdmin from "../components/menuAdmin";
 //import data from "../data";
 
-const EditNew = {
+const editNew = {
 
     async print(id) {
         
@@ -40,7 +40,7 @@ const EditNew = {
               </label>
               <div class="mt-1 flex rounded-md shadow-sm">
                
-                <input type="text" name="auhtor" id="author" value="${data.author}" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Price...">
+                <input type="text" name="author" id="author" value="${data.author}" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Price...">
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ const EditNew = {
               Content
             </label>
             <div class="mt-1">
-              <textarea id="desc" name="desc" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Ingredient...">${data.desc}</textarea>
+              <textarea id="content" name="content" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Ingredient...">${data.desc}</textarea>
             </div>
           </div>
 
@@ -68,14 +68,21 @@ const EditNew = {
               Photo
             </label>
             <div class="mt-1 flex items-center">
-              <span><img class="w-[50%] " src="${data.img}" alt=""></span>
-                
+            <span><img src="${data.img}" alt=""></span>
+              <span class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </span>
+              <button type="button" class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Change
+              </button>
             </div>
           </div>
 
           <div>
             <label class="block text-sm font-medium text-gray-700">
-              Change photo
+              Cover photo
             </label>
             <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
               <div class="space-y-1 text-center">
@@ -130,7 +137,7 @@ const EditNew = {
                 title: document.querySelector("#company-website").value,
                 author: document.querySelector("#author").value,
                 about:document.querySelector("#about").value,
-                desc: document.querySelector("#desc").value,
+                desc: document.querySelector("#content").value,
                 img:response.data.url
             });
                
@@ -139,4 +146,4 @@ const EditNew = {
         });
     }
 };
-export default EditNew;
+export default editNew;

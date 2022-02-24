@@ -1,9 +1,10 @@
 import axios from "axios";
 import Menu from "../components/menu";
-import { reRender } from "../utils/rerender";
+import { add } from "../api/posts";
+// import { reRender } from "../utils/rerender";
 import MenuAdmin from "../components/menuAdmin";
-import $ from "jQuery";
-import validate from "jquery-validation";
+import $ from "jquery";
+//import validate from "jquery-validation";
 const AddNew = {
   
     async print() {
@@ -144,16 +145,16 @@ const AddNew = {
                             "Content-Type": "application/form-data"
                         }
                     });
-                    const add={
+                    add({
                         title:document.querySelector("#company-website").value,
                         author:document.querySelector("#author").value,
                         desc:document.querySelector("#content").value,
                         about:document.querySelector("#about").value,
                         img:response.data.url
-                    };
-                    axios.post("http://localhost:3001/posts", add);
+                    });
+                    //axios.post("http://localhost:3001/posts", add);
                     document.location.href="/#/admin/news";
-                    await reRender(AddNew, "#app");
+                    //await reRender(AddNew, "#app");
                 }
                 addNewHandler();
             }

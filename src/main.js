@@ -2,7 +2,7 @@ import Navigo from "navigo";
 import AddNew from "./admin/addNews";
 import AddProduct from "./admin/addProduct";
 import Dashboard from "./admin/dashboard";
-import EditNew from "./admin/editNews";
+import editNew from "./admin/editNew";
 import editProduct from "./admin/editProduct";
 import News from "./admin/news";
 import Products from "./admin/products";
@@ -12,8 +12,6 @@ import AboutPage from "./pages/about";
 import CartPage from "./pages/cart";
 import ContactPage from "./pages/contact";
 import DetailProductPage from "./pages/detailProducts";
-
-
 import DetailNewsPage from "./pages/detailPosts";
 import HomePage from "./pages/home";
 import PostPage from "./pages/posts";
@@ -111,9 +109,9 @@ router.on({
     //     const {id}= data;
     //     render(EditNew.print(id));
     // }
-    "/admin/news/editNews/:id":({data})=>{
+    "/admin/news/editNew/:id":({data})=>{
         // const {id}= data;
-        render(EditNew, data.id);
+        render(editNew, data.id);
     }
 });
 router.resolve();
